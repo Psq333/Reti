@@ -8,9 +8,9 @@ clientSocket.connect((serverName,serverPort))
 
 while 1:
     sentence = input('Frase in minuscolo:')
+    clientSocket.makefile("w").writelines(sentence+"\n")
     if sentence == "END":
         break
-    clientSocket.makefile("w").writelines(sentence+"\n") 
     modifiedSentence = clientSocket.makefile().readline() 
     print("FROM SERVER: ", modifiedSentence) 
 
