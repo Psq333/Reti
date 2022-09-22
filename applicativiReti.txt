@@ -1,0 +1,5 @@
+TCPView - Vede le conversazioni in atto sul mio host e lo stato
+www.wireshark.org - analizzatore di rete
+NMap - https://nmap.org/download
+Pingplotter - https://www.pingplotter.com/download/
+NetworkingMiner - https://www.netresec.com/?page=NetworkMiner
