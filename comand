@@ -1,1 +1,14 @@
-
+route print - visualizza tabella di routing del device
+ipconfig /all | more - visualizza le interfacce di rete
+arp -a - visualizza MAC address 
+ipconfig(windows)/ifconfig(linux) - visualizza le interfacce di rete
+netstat -ltnp - visualizza attività di rete di porte e IP 
+        l = listening
+        t = tcp
+        n = numerico
+        p = ad ogni connessione visulizza il processo attaccato
+sudo tcpdump -i nome_interfaccia -n -v comando_capture_filter
+        i = specificare nome_interfaccia da catturare
+        v = visualizza tutto
+telnet host porta - collegamento remoto sull'Host:Porta
+mailq - visualizza la coda di posta elettronica in un determinato server
