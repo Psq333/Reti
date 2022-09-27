@@ -3,3 +3,4 @@ www.wireshark.org - analizzatore di rete
 NMap - https://nmap.org/download
 Pingplotter - https://www.pingplotter.com/download/
 NetworkingMiner - https://www.netresec.com/?page=NetworkMiner
+https://root-servers.org/ - root server mappa
