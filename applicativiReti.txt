@@ -4,3 +4,4 @@ NMap - https://nmap.org/download
 Pingplotter - https://www.pingplotter.com/download/
 NetworkingMiner - https://www.netresec.com/?page=NetworkMiner
 https://root-servers.org/ - root server mappa
+https://computerscience.unicam.it/marcantoni/reti/applet/GoBackProtocol/goback.html
