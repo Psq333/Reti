@@ -5,3 +5,4 @@ Pingplotter - https://www.pingplotter.com/download/
 NetworkingMiner - https://www.netresec.com/?page=NetworkMiner
 https://root-servers.org/ - root server mappa
 https://computerscience.unicam.it/marcantoni/reti/applet/GoBackProtocol/goback.html
+https://www.mat.unical.it/pacenza/storage/debian.ova -> debian per avviare macchine virtuali con gns3
