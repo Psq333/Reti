@@ -1,0 +1,3 @@
+6) http && ip.src_host == 160.97.168.110 && tcp.port == 80 && http.request.method == GET && http.request.uri contains cs
+7)  a)Status code = 200 & reason phrase = OK
+    b)
