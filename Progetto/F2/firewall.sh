@@ -10,6 +10,8 @@ iptables -P FORWARD DROP
 iptables -A INPUT -i eth2 -p tcp --dport 22 -j ACCEPT
 iptables -A OUTPUT -o eth2 -p tcp --sport 22 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
+iptables -t nat -A PREROUTING -p tcp --dport 25 -j DNAT --to-destination 10.0.2.2:25
+
 iptables -N DMZRed
 iptables -N RedDMZ
 iptables -N allDMZ
@@ -23,11 +25,10 @@ iptables -A FORWARD -o eth0 -d 10.0.0.0/22 -j allDMZ
 
 iptables -A DMZRed -j ACCEPT
 iptables -A RedDMZ -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A DMZAll -p tcp --dport 53 -j ACCEPT
-iptables -A DMZAll -p tcp --dport 25 -j ACCEPT
-iptables -A DMZAll -p tcp --dport 21 -j ACCEPT
-iptables -A allDMZ -p tcp --sport 53 -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A allDMZ -p tcp --sport 25 -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A allDMZ -p tcp --sport 21 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A allDMZ -p tcp --dport 53 -j ACCEPT
+iptables -A allDMZ -p tcp --dport 25 -j ACCEPT
+iptables -A allDMZ -p tcp --dport 21 -j ACCEPT
+iptables -A DMZAll -p tcp --sport 53 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A DMZAll -p tcp --sport 25 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A DMZAll -p tcp --sport 21 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
-iptables -t nat -A PREROUTING -p tcp --dport 25 -j DNAT --to-destination 10.0.2.2:25
