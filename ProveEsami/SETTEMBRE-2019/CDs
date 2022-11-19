@@ -1,0 +1,46 @@
+
+ACCORPAMENTO_DMZ
+    network 10.0.0.0/22
+    netmask 255.255.252.0
+    broadcas 10.0.3.255
+
+	CD9:
+	    network 10.0.0.0/23
+	    netmask 255.255.254.0
+	    broadcast 10.0.1.255
+	    
+	CD8:
+	    network 10.0.2.0/28
+	    netmask 255.255.255.240
+	    broadcast 10.0.2.15
+
+ACCORPAMENTO_GREEN
+CD1:
+    network 10.0.4.0/24
+    netmask 255.255.2510.5.0
+    broadcast 10.0.4.255
+
+
+ACCORPAMENTO_RED
+CD6:
+    network 10.0.5.0/25
+    netmask 255.255.255.128
+    broadcast 10.0.5.127
+    
+
+
+	
+CD2 
+	network 10.0.5.128
+	netmask 255.255.255.252
+	broadcast 10.0.5.131
+
+CD4
+	network 10.0.5.132
+	netmask 255.255.255.252
+	broadcast 10.0.5.135
+
+TAP
+	network	10.0.5.136
+	netmask 255.255.255.252
+	broadcast 10.0.5.139
