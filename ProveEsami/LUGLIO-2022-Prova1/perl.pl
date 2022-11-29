@@ -5,13 +5,13 @@
 $INPUT = 0;
 $FORWARD = 0;
 $OUTPUT = 0;
-$LIBVIRT_OUT = 0;
+$internetDMZ = 0;
 $b = 0;
 
 for(@iptables){
 	@line = split/ /,$_;
 	#print "@line\n";
-	if(@line[0] = "Chain" and @line[1] = "LIBVIRT_OUT"){
+	if(@line[0] = "Chain" and @line[1] = "internetDMZ"){
 		#print "@line\n";
 		$b = 1;
 	}
@@ -27,9 +27,13 @@ for(@iptables){
 		}
 		
 		if($b == 1 && @line[3] eq "ACCEPT"){
-			$LIBVIRT_OUT += $_;
+			$internetDMZ += $_;
 		}
 	}
 }
 
-print "$INPUT $FORWARD $OUTPUT $LIBVIRT_OUT";
+if($internetDMZ > 10){
+	qx{iptables -F internetDMZ};
+}
+
+print "$INPUT $FORWARD $OUTPUT $LIBVIRT_OUT\n";
