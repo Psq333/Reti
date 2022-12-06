@@ -1,0 +1,3 @@
+5. route -n
+6. tcpdump icmp
+7. iptables -nvL

@@ -1,0 +1,27 @@
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 10.0.5.138
+    netmask 255.255.255.252
+    network 10.0.5.136
+    broadcast 10.0.5.139
+    gateway 10.0.5.137
+
+auto eth1
+iface eth1 inet static
+    address 10.0.4.1
+    netmask 255.255.255.0
+    network 10.0.4.0
+    broadcast 10.0.4.255
+    
+auto eth2
+iface eth2 inet static
+    address 10.0.5.129
+    netmask 255.255.255.252
+    network 10.0.5.128
+    broadcast 10.0.5.131
+    
+post-up route add -net 10.0.0.0/22 gw 10.0.5.130 dev eth2
+post-up route add -net 10.0.5.0/25 gw 10.0.5.130 dev eth2

@@ -1,0 +1,3 @@
+5. tcpdump -i eth0
+6. nslookup mat.unical.it
+7. traceroute IP

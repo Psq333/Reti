@@ -1,0 +1,16 @@
+CD4
+	network 10.0.0.0/23
+	netmask 255.255.254.0
+	broadcast 10.0.1.255
+CD1
+	network 10.0.2.0/23
+	netmask 255.255.254.0
+	broadcast 10.0.3.255
+CD3
+	network 10.0.4.0/24
+	netmask 255.255.255.0
+	broadcast 10.0.4.255
+CD2
+	network 10.0.5.0/30
+	netmask 255.255.255.252
+	broadcast 10.0.5.3

@@ -1,0 +1,3 @@
+5. netstat -tu
+6. tcmpdump icmp
+7. arp -s IP MAC
