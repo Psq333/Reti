@@ -1,9 +1,9 @@
 #! /bin/bash
 #F1
 #F1 -> TAP
-post-up route add default -net gw IP_TAP dev eth2
+post-up route add -net default gw IP_TAP dev eth0
 #F1 -> GREEN
-post-up route add IPGreen/22 -net gw R1[eth3] dev eth2
+post-up route add -net IPGreen/22 gw R1[eth3] dev eth2
 #F1 -> CD4
 post-up route add -net IPCD4/30 gw R1[eth3] dev eth2
 #F1 -> CD5
