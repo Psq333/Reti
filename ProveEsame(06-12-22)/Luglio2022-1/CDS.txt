@@ -41,3 +41,19 @@ broadcast: 10.0.7.255
 	netmask: 255.255.254.0
 	broadcast: 10.0.7.255
 
+CD2:
+	network: 10.0.8.0/30 
+	netmask: 255.255.255.252
+	broadcast: 10.0.8.3
+CD4:
+	network: 10.0.8.4/30 
+	netmask: 255.255.255.252
+	broadcast: 10.0.8.7
+CD5:
+	network: 10.0.8.9/30 
+	netmask: 255.255.255.252
+	broadcast: 10.0.8.11
+TAP:
+	network: 10.0.8.12/30 
+	netmask: 255.255.255.252
+	broadcast: 10.0.8.15
