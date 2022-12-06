@@ -1,0 +1,3 @@
+5) nslookup mat.unical.it
+6) tcpdump icmp
+7) watch iptables -nvL

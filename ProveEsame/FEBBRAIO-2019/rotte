@@ -1,0 +1,12 @@
+#F1
+#F1 -> Green
+route add -net IP_ACCORPAMENTO_GREEN gw R1[eth3] dev eth2
+#F1 -> DMZ
+route add -net IP_ACCORPAMENTO_DMZ gw R1[eth3] dev eth2
+#F1 -> CD1
+route add -net IP_CD1 gw R1[eth3] dev eth2
+
+#R1
+#R1 -> DMZ
+route add -net IP_ACCORPAMENTO_DMZ gw F2[eth0] dev eth4
+

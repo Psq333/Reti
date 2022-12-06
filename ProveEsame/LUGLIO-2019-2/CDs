@@ -1,0 +1,67 @@
+ACCORPAMENTO_GREEN
+	network 10.0.0.0/22
+	netmask 255.255.252.0
+	broadcast 10.0.3.255
+	CD5
+		network 10.0.0.0/23
+		netmask 255.255.254.0
+		broadcast 10.0.1.255
+
+	CD6 -> 24
+		network 10.0.2.0/24
+		netmask 255.255.255.0
+		broadcast 10.0.2.255
+	
+ACCORPAMENTO_DMZ
+CD7
+	network 10.0.4.0
+	netmask 255.255.254.0
+	broadcast 10.0.5.255
+
+
+ACCORPAMENTO_RED
+CD1
+	network 10.0.6.0
+	netmask 255.255.255.0
+	broadcast 10.0.6.255
+	
+CD2
+	network 10.0.7.0
+	netmask 255.255.255.252
+	broadcast 10.0.7.3
+	
+CD4
+	network 10.0.7.4
+	netmask 255.255.255.252
+	broadcast 10.0.7.7
+
+TAP
+	network 10.0.7.8
+	netmask 255.255.255.252
+	broadcast 10.0.7.11
+	
+	
+	
+
+F1 -> DMZ
+route add -net IPDMZ/MaskDMZ gw F2[eth2] dev eth2
+F1 -> CD4
+route add -net IPCD4/MaskCD4 gw F2[eth2] dev eth2
+F1 -> Green
+route add -net IPGreen/MaskGreen gw F2[eth2] dev eth2
+
+F2 -> TAP
+route add -net IPTAP/MaskTAP gw F1[eth2] dev eth2
+F2 -> Red
+route add -net IPRed/MaskRed gw F1[eth2] dev eth2
+F2 -> Green
+route add -net IPGreen/MaskGreen gw R2[eth0] dev eth0
+
+R2 -> TAP
+route add -net IPTAP/MaskTAP gw F2[eth0] dev eth0
+R2 -> Red
+route add -net IPRed/MaskRed gw F2[eth0] dev eth0
+R2 -> CD2
+route add -net IPCD2/MaskCD2 gw F2[eth0] dev eth0
+R2 -> DMZ
+route add -net IPDMZ/MaskDMZ gw F2[eth0] dev eth0
